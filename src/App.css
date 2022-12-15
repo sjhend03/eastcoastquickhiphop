@@ -1,38 +1,342 @@
-.App {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  overflow: hidden;
+
+}
+
+body::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url('./images/polygons.jpg');
+  background-position: center;
+  background-size: 150%;
+  height: 100vh;
+  width: 100vw;
+  opacity: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+  --color1: rgb(218, 218, 0);
+  --color2: white;
+  white-space: pre-line;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  z-index: 5;
+}
+
+.center-line {
+  border: 2px solid var(--color1);
+  width: 80vw;
+  background-color: var(--color1);
+}
+
+.line {
+  border: 1px solid var(--color1);
+  height: 7vh;
+  background-color: var(--color1);
+  width: 1px;
+  position: absolute;
+}
+
+.card-wrapper {
+  background-color: var(--color2);
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--color1);
+  transform: translateY(8vh) translateX(-50%);
+  transition: all 0.5s ease-in-out;
+  width: 10vw;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.card-title {
+  width: fit-content;
+}
+
+.card-description {
+  overflow-y: auto;
+  height: 50vh;
+  padding: 0 10px;
+}
+
+.card-wrapper .card-sources {
+  display: none;
+}
+
+.card-wrapper:hover {
+  font-size: larger;
+  width: 125px;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.card-wrapper .card-writting .card-description {
+  display: none;
+}
+
+.line-card-wrapper {
+  position: absolute;
+}
+
+.timeline-wrapper .line-card-wrapper:nth-child(odd) .line{
+  transform: translateY(-8vh);
+}
+.timeline-wrapper .line-card-wrapper:nth-child(odd) .card-wrapper{
+  transform: translateY(-18vh) translateX(-50%);
+}
+
+.bubble {
+  position: absolute;
+}
+
+.timeline-wrapper .bubble:nth-child(odd) {
+  top: 73vh;
+}
+
+.timeline-wrapper .bubble:nth-child(even) {
+  top: 70vh;
+}
+
+.bubble-link {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.clicked {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgb(255, 255, 255);
+  transform: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./images/polygons.jpg');
+  background-image: cover;
+}
+
+.clicked .card-title {
+  font-size: 3rem;
+  color: white;
+}
+.clicked .card-description {
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 5vh;
+}
+
+.clicked .card-sources {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-top: 2vh;
+  font-size: 0.8rem;
+} 
+
+.card-writting {
+  display: flex;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-image img{
+  width: 30vw;
+  display: none;
+}
+
+.card-image h3 {
+  display: none;
+}
+
+.clicked .card-image h3{
+  text-align: center;
+  color: white;
+  text-decoration: underline;
+  font-size: 1.3rem;
+  display: block;
+}
+
+.clicked .card-image img {
+  display: block;
+  padding: 5vw;
+}
+
+.card-wrapper:hover .card-image img{
+  display: block;
+  width: 12vw;
+  height: auto;
+}
+
+.bubble-wrapper {
+  border-radius: 50%;
+  display: flex;
+  height: 10vh;
+  width: 10vh;
+  border: 1px solid var(--color1);
+  background-color: var(--color2);
+  position: absolute;
+  align-items: center;
+  transition: all 0.5s ease;
+  padding: 10px;
+  font-size: 0.8rem;
+}
+
+.bubble-link h3 {
+  color: white;
+  text-decoration: underline;
+}
+
+.bubble-wrapper:hover {
+  width: 12vh;
+  height: 12vh;
+  transform: translateX(-15%);
+  cursor: pointer;
+}
+
+.bubble-wrapper .card-writting .card-description{
+  display: none;
+}
+
+.bubble-wrapper .card-writting .card-title{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bubble-1 {
+  position: absolute;
+  top: 65vh;
+  left: 20vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bubble-wrapper .bubble-link {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.clicked .bubble-link {
+  display: block;
+}
+
+.app-wrapper h1 {
   color: white;
+  position: absolute;
+  top: 10vh;
+  width: 100vw;
+  text-align: center;
+  font-size: 1.9rem;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.App-link {
-  color: #61dafb;
+.info-link h3{
+  color: white;
+  font-size: 1.3rem;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clicked .info-title {
+  display: none;
 }
+
+.extra-info-wrapper .info-link{
+  display: none;
+}
+
+.clicked .info-link {
+  display: block;
+}
+
+.extra-info-wrapper {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  margin: 0;
+}
+
+a {
+  color: lightblue;
+  width: 50vw;
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
