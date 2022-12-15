@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/eastcoastquickhiphop/static/css/main.3ffaa26c.css",
-    "main.js": "/eastcoastquickhiphop/static/js/main.0155320b.js",
+    "main.css": "/eastcoastquickhiphop/static/css/main.c1d1e10a.css",
+    "main.js": "/eastcoastquickhiphop/static/js/main.28e06166.js",
     "static/js/787.64197dac.chunk.js": "/eastcoastquickhiphop/static/js/787.64197dac.chunk.js",
     "static/media/Raider_Klan.jpg": "/eastcoastquickhiphop/static/media/Raider_Klan.3398421be1b9f5de0f71.jpg",
     "static/media/DJ_Kool_Herc.jpg": "/eastcoastquickhiphop/static/media/DJ_Kool_Herc.e7d43de362e3e463afc2.jpg",
@@ -11,12 +11,12 @@
     "static/media/today.jpg": "/eastcoastquickhiphop/static/media/today.2953fcf3085f0c0edf0d.jpg",
     "static/media/polygons.jpg": "/eastcoastquickhiphop/static/media/polygons.bc534bc915e6b5e1049c.jpg",
     "index.html": "/eastcoastquickhiphop/index.html",
-    "main.3ffaa26c.css.map": "/eastcoastquickhiphop/static/css/main.3ffaa26c.css.map",
-    "main.0155320b.js.map": "/eastcoastquickhiphop/static/js/main.0155320b.js.map",
+    "main.c1d1e10a.css.map": "/eastcoastquickhiphop/static/css/main.c1d1e10a.css.map",
+    "main.28e06166.js.map": "/eastcoastquickhiphop/static/js/main.28e06166.js.map",
     "787.64197dac.chunk.js.map": "/eastcoastquickhiphop/static/js/787.64197dac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ffaa26c.css",
-    "static/js/main.0155320b.js"
+    "static/css/main.c1d1e10a.css",
+    "static/js/main.28e06166.js"
   ]
 }
